@@ -59,13 +59,18 @@ module.exports = class KnackHQClient {
       }
     };
 
+    request_options.method = options.method;
+
+    if (options.body) {
+      request_options.method = "POST";
+      request_options.body = options.body;
+    }
+
     if (this.token) {
       request_options.headers["Authorization"] = this.token;
     } else if (this.api_key) {
       request_options.headers["X-Knack-REST-API-Key"] = this.api_key;
     }
-
-    request_options.method = options.method || (options.body ? "POST" : "GET");
 
     return this.request_async(request_options);
   }

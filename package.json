@@ -1,6 +1,6 @@
 {
   "name": "knack-client",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Knack API Client Module",
   "main": "index.js",
   "scripts": {
