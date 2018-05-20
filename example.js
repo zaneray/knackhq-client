@@ -1,22 +1,19 @@
-'use strict';
+"use strict";
 
-const KnackHQClient = require('./index.js');
+const KnackHQClient = require("./index.js");
 
 const client = new KnackHQClient({
-
-  app_id: 'XXXXXXXXXXXXXXXXXXX',
-  api_key: 'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX'
+  app_id: "XXXXXXXXXXXXXXXXXXX",
+  api_key: "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"
 });
 
-
 async function knackExample() {
-
   const objects = await client.objects();
 
   const object_key = objects.objects[0].key;
 
   await client.createRecord(object_key, {
-    field_1: 'Hello, Knack!'
+    field_1: "Hello, Knack!"
   });
 
   let records = await client.records(object_key);
