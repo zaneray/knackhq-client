@@ -27,7 +27,14 @@ module.exports = class KnackHQClient {
         });
 
         response.on("end", () => {
-          resolve(JSON.parse(document_text));
+          try {
+            resolve(JSON.parse(document_text));
+          } catch (error) {
+            reject({
+              error,
+              body: document_text
+            });
+          }
         });
       });
 
