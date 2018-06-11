@@ -136,7 +136,7 @@ module.exports = class KnackHQClient {
   async findRecord(object_key, filters, page, rows_per_page) {
     return this.request({
       path:
-        "/v1/objects/" +
+        "objects/" +
         object_key +
         "/records" +
         (filters
