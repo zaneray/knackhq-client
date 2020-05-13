@@ -99,6 +99,12 @@ module.exports = class KnackHQClient {
     });
   }
 
+  async fields(object_key) {
+    return this.request({
+      path: `objects/${object_key}/fields`
+    });
+  }
+
   async records(object_key) {
     return this.request({
       path: `objects/${object_key}/records`
