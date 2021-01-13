@@ -62,7 +62,6 @@ module.exports = class KnackHQClient {
     request_options.method = options.method;
 
     if (options.body) {
-      request_options.method = "POST";
       request_options.body = options.body;
     }
 
@@ -133,7 +132,7 @@ module.exports = class KnackHQClient {
 
   async updateRecord(object_key, record_key, body) {
     return this.request({
-      path: "objects/${object_key}/records/${record_key}",
+      path: `objects/${object_key}/records/${record_key}`,
       method: "PUT",
       body: body
     });
